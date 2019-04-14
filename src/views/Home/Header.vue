@@ -8,7 +8,7 @@
           <span class="iconfont">&#xe632;</span>
           景点</div>
       <div class="header-right">
-          城市
+          {{msg}}
           <span class="iconfont">&#xe62d;</span>
         </div>
   </div>
@@ -17,7 +17,10 @@
 <script>
 export default {
   // 导出的接口模块名
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    msg: String
+  }
 }
 </script>
 
