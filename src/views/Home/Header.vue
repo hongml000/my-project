@@ -8,18 +8,19 @@
           <span class="iconfont">&#xe632;</span>
           景点</div>
       <div class="header-right">
-          {{msg}}
+          <router-link to="/sub"> {{ this.city }} </router-link>
           <span class="iconfont">&#xe62d;</span>
-        </div>
+      </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  // 导出的接口模块名
   name: 'HomeHeader',
-  props: {
-    msg: String
+  computed: {
+    // 将state中，定义的this.$store.state.city映射到this.city中
+    ...mapState(['city'])
   }
 }
 </script>
