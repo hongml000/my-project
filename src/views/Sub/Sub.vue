@@ -2,8 +2,9 @@
   <div class="div">
     <!-- @click="changeHomeData" -->
     <div>{{ this.city }}</div>
-    <button @click='changeHomeData("贵港")'>贵港</button>
-
+    <button v-for='curCity in curCities' :key='curCity.id' @click='changeHomeData(curCity.city)'>
+      {{ curCity.city }}-{{ curCity.id }}
+    </button>
   </div>
 </template>
 
@@ -12,6 +13,16 @@ import { mapState, mapActions } from 'vuex'
 export default {
   // 导出的接口模块名
   name: 'Sub',
+  data () {
+    return {
+      curCities: [
+        {id: 0, city: '北京'},
+        {id: 1, city: '贵港'},
+        {id: 2, city: '上海'}
+      ]
+    }
+  },
+  // props: ['key'],
   computed: {
     // 将this.$store.state.city映射为this.city
     ...mapState(['city'])
@@ -21,7 +32,7 @@ export default {
     ...mapActions(['change']),
 
     changeHomeData (city) {
-      console.log(city)
+      // console.log(city)
       // 这里就可以使用这个change(city)方法了
       this.change(city)
       this.$router.push('/')
