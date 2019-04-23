@@ -1,6 +1,7 @@
 <template>
   <div>
     <home-header></home-header>
+    <layout></layout>
   </div>
 </template>
 
@@ -9,7 +10,7 @@
 import HomeHeader from './Header'
 import axios from 'axios'
 import { mapState } from 'vuex'
-
+import layout from '../Layout'
 export default {
   // 导出的接口模块名
   name: 'home',
@@ -22,10 +23,12 @@ export default {
   components: {
     // ES6省略写法 HomeHeader: HomeHeader,
     HomeHeader,
+    layout,
     ...mapState(['city'])
   },
   methods: {
     getHomeInfo () {
+      console.log(this.city)
       axios.get('/static/mock/index.json?city=' + this.city).then(() => { 'succ!' })
     }
     // getHomeInfoSucc (res) {
@@ -54,5 +57,4 @@ export default {
 </script>
 
 <style>
-
 </style>

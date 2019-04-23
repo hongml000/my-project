@@ -4,10 +4,12 @@
     <keep-alive>
       <router-view/>
     </keep-alive>
+    <!-- <a-button type="primary">antd按钮</a-button> -->
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'App'
 }
@@ -15,7 +17,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
