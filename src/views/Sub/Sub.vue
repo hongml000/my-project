@@ -2,9 +2,11 @@
   <div class="div">
     <!-- @click="changeHomeData" -->
     <div>{{ this.city }}</div>
-    <button v-for='curCity in curCities' :key='curCity.id' @click='changeHomeData(curCity.city)'>
-      {{ curCity.city }}-{{ curCity.id }}
-    </button>
+    <button
+      v-for="curCity in curCities"
+      :key="curCity.id"
+      @click="changeHomeData(curCity.city)"
+    >{{ curCity.city }}-{{ curCity.id }}</button>
   </div>
 </template>
 
@@ -16,9 +18,9 @@ export default {
   data () {
     return {
       curCities: [
-        {id: 0, city: '北京'},
-        {id: 1, city: '贵港'},
-        {id: 2, city: '上海'}
+        { id: 0, city: '北京' },
+        { id: 1, city: '贵港' },
+        { id: 2, city: '上海' }
       ]
     }
   },
@@ -35,6 +37,8 @@ export default {
       // console.log(city)
       // 这里就可以使用这个change(city)方法了
       this.change(city)
+      console.log('##################################')
+      console.log(this.city)
       this.$router.push('/')
     }
   }
@@ -43,5 +47,4 @@ export default {
 
 // 使用scoped说明这个样式只对当前文件有效
 <style rel="stylesheet/scss" lang="scss" scoped>
-
 </style>

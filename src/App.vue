@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
+    <!-- <keep-alive> -->
+    <router-view/>
+    <!-- </keep-alive> -->
     <!-- <a-button type="primary">antd按钮</a-button> -->
   </div>
 </template>
